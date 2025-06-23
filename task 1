@@ -1,0 +1,37 @@
+-- Insert sample users
+INSERT INTO users (name, email, password, role) VALUES
+('Ravi Kumar', 'ravi@example.com', 'pass123', 'instructor'),
+('Anu Sharma', 'anu@example.com', 'anu123', 'student');
+
+-- Insert course (make sure instructor_id exists = 1)
+INSERT INTO courses (title, description, price, instructor_id) VALUES
+('SQL for Beginners', 'Learn SQL from scratch', 499.00, 1);
+
+-- Insert enrollment (student_id = 2, course_id = 1)
+INSERT INTO enrollments (student_id, course_id, enrollment_date) VALUES
+(2, 1, '2025-06-24');
+
+
+INSERT INTO lessons (course_id, title, content) VALUES
+(1, 'Lesson 1: Introduction to SQL', 'This lesson covers basic SQL commands.');
+
+
+INSERT INTO quizzes (course_id, title) VALUES
+(1, 'Quiz 1: Basics of SQL');
+
+
+INSERT INTO questions (quiz_id, question_text, option_a, option_b, option_c, option_d, correct_option) VALUES
+(1, 'What does SQL stand for?', 'Structured Query Language', 'Simple Question Logic', 'Sorted Queue Log', 'None', 'A');
+
+
+INSERT INTO submissions (quiz_id, student_id, score, submission_date) VALUES
+(1, 2, 100, '2025-06-24');
+
+
+SELECT * FROM users;
+SELECT * FROM courses;
+SELECT * FROM enrollments;
+SELECT * FROM lessons;
+SELECT * FROM quizzes;
+SELECT * FROM questions;
+SELECT * FROM submissions;
